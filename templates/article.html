@@ -6,7 +6,7 @@
             <h1 class="post-title" itemprop="headline">{{ article.title|striptags }}</h1>
             <section class="post-meta">
                 <time class="post-date" itemprop="datePublished" datetime="{{ article.date|strftime('%YYYY-%MM-%DD') }}">{{ article.date|strftime('%A, %B %d, %Y') }}</time>
-                on {% for tag in article.tags %}<a href="{{ tag.url }}">{{ tag.name | title }}{% if not loop.last %}, {% endif %}</a>{% endfor %}
+                on {% for tag in article.tags %}<a href="/{{ tag.url }}">{{ tag.name | title }}{% if not loop.last %}, {% endif %}</a>{% endfor %}
             </section>
         </header>
         <section class="post-content">
